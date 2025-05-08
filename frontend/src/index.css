@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@keyframes ripple-spread {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 800px;
+    height: 800px;
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple-spread 0.7s ease-out forwards;
+  position: absolute;
+  z-index: 0;
+}
+
+.toast .alert {
+  min-width: 360px;
+  height: 90px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Progress bar animation */
+@keyframes toastProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-toast-progress {
+  animation: toastProgress 3s linear forwards;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}

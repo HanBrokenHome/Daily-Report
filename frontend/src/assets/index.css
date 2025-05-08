@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./Inter-4.1/Inter.ttc') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
