@@ -1,12 +1,39 @@
-# React + Vite
+# 📝 Daily Report – Tech Stack Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project ini adalah sistem pencatatan laporan harian dengan stack modern yang ringan, modular, dan scalable.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Plugins & Dependencies
 
-## Expanding the ESLint configuration
+### 🖥️ Frontend
+- **[Vite](https://vitejs.dev/)**  
+  Fast bundler untuk React, sebagai pengganti Create React App (CRA), memberikan waktu compile yang sangat cepat.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **[React Router DOM](https://reactrouter.com/)**  
+  Library routing untuk SPA (Single Page Application) agar navigasi antar halaman berjalan lancar.
+
+- **[Tailwind CSS](https://tailwindcss.com/)**  
+  Utility-first CSS framework untuk styling yang konsisten, cepat, dan responsive.
+
+- **[DaisyUI](https://daisyui.com/)**  
+  Plugin komponen siap pakai untuk Tailwind, mempercepat pengembangan UI yang indah dan profesional.
+
+- **[Zustand](https://github.com/pmndrs/zustand)**  
+  Lightweight state management tanpa boilerplate, cocok untuk kebutuhan global state seperti autentikasi atau data user.
+
+---
+
+### 🗄️ Backend
+- **[bcrypt](https://www.npmjs.com/package/bcrypt)**  
+  Untuk hashing password secara aman sebelum disimpan ke database.
+
+- **[jsonwebtoken (JWT)](https://www.npmjs.com/package/jsonwebtoken)**  
+  Untuk pembuatan dan verifikasi token autentikasi berbasis JWT.
+
+- **[Mongoose](https://mongoosejs.com/)**  
+  ODM (Object Data Modeling) untuk MongoDB, memudahkan definisi skema dan query data secara efisien.
+
+---
+
+## 📦 Project Structure
