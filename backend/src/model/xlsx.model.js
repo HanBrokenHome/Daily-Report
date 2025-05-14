@@ -1,66 +1,50 @@
+// models/vendorSales.js
 import mongoose from "mongoose";
 
-const reportSchema = new mongoose.Schema({
-  ORDER_ID: Number,
-  REGIONAL: Number,
-  WITEL: String,
-  DATEL: String,
-  STO: String,
-  EXTERN_ORDER_ID: Number,
-  JENIS_PSB: String,
-  TYPE_TRANSAKSI: String,
-  STATUS_RESUME: String,
-  STATUS_MESSAGE: String,
-  KCONTACT: String,
-  ORDER_DATE: Number,
-  NCLI: Number,
-  NDEM: String,
-  SPEEDY: String,
-  POTS: String,
-  CUSTOMER_NAME: String,
-  NO_HP: String,
-  EMAIL: String,
-  INSTALL_ADDRESS: String,
-  CUSTOMER_ADDRESS: String,
-  CITY_NAME: String,
-  GPS_LATITUDE: Number,
-  GPS_LONGITUDE: Number,
-  PACKAGE_NAME: String,
-  LOC_ID: String,
-  DEVICE_ID: String,
-  AGENT_ID: String,
-  WFM_ID: String,
-  SCHEDSTART: String,
-  SCHEDFINISH: String,
-  ACTSTART: String,
-  ACTFINISH: String,
-  SCHEDULE_LABOR: String,
-  FINISH_LABOR: String,
-  LAST_UPDATED_DATE: Number,
-  TYPE_LAYANAN: String,
-  ISI_COMMENT: mongoose.Schema.Types.Mixed,
-  TINDAK_LANJUT: String,
-  USER_ID_TL: String,
-  TL_DATE: Number,
-  TANGGAL_PROSES: Number,
-  TANGGAL_MANJA: Number,
-  HIDE: String,
-  CATEGORY: String,
-  PROVIDER: String,
-  NPER: Number,
-  CHANNEL: String,
-  GROUP_PAKET: String,
-  AMCREW: String,
-  STATUS_WO: String,
-  STATUS_TASK: String,
-  ADDON: String,
-  SN_NTE: String,
-
-  // Optional: timestamp penyimpanan data
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
+// Skema Vendor
+const vendorSchema = new mongoose.Schema({
+  kode: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  group_packet: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  addon: {
+    type: String,
+    trim: true,
+  },
+  nama_vendor: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  nama_sales: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
-export const ReportModel = mongoose.model("Report", reportSchema);
+// Skema Sales
+const salesSchema = new mongoose.Schema({
+  vendor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Vendor',
+    required: true,
+  },
+  nama_sales: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+});
+
+// Model gabungan: Vendor dan Sales
+const Vendor = mongoose.model('Vendor', vendorSchema);
+const Sales = mongoose.model('Sales', salesSchema);
+
+export { Vendor, Sales };

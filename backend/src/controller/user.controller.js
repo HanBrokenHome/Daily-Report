@@ -17,7 +17,7 @@ export const Login = async(req, res) => {
             return res.status(404).json({ message : "Username atau password salah" });
         }
 
-        const token = jwt.sign({ id: user._id }, "SigmaToken", {expiresIn : '1h'});
+        const token = jwt.sign({ id: user._id }, "SigmaToken");
         res.status(200).json({
             message : "Berhasil login",
             token

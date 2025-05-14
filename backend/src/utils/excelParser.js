@@ -7,6 +7,6 @@ export const parseExcelFile = (filePath) => {
   const worksheet = workbook.Sheets[sheetName];
   const jsonData = XLSX.utils.sheet_to_json(worksheet);
 
-  fs.unlinkSync(filePath); // hapus file setelah dibaca
+  fs.unlinkSync(filePath);
   return jsonData;
 };

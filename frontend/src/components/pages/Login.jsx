@@ -50,7 +50,7 @@ const navigate = useNavigate();
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       const datas = { username, password };
-      const consume = await axios.post("http://localhost:5000/login", datas);
+      const consume = await axios.post("http://localhost:8000/login", datas);
       const response = consume.data;
       const token = localStorage.setItem('token', response.token);
       console.log(response);
